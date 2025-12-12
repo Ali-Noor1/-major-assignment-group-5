@@ -70,3 +70,18 @@ function exitVehicle(i) {
     alert("Vehicle Exited Successfully!");
     location.reload();
 }
+
+// --- Show History ---
+if (document.getElementById("historyList")) {
+    let rows = "";
+    history.forEach(v => {
+        rows += `<tr>
+            <td>${v.vnum}</td>
+            <td>${v.owner}</td>
+            <td>${v.timeIn}</td>
+            <td>${v.timeOut}</td>
+            <td>–</td>
+        </tr>`;
+    });
+    document.getElementById("historyList").innerHTML = rows;
+}
